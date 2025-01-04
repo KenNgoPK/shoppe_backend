@@ -16,7 +16,7 @@ const app = express()
 app.use(express.json())
 //Xem tất cả sản phẩm
 app.get('/api/products', (req, res) => {
-    const sql = 'SELECT ProductID, CategoryID, ProductName, Price FROM PRODUCTS'
+    const sql = 'SELECT ProductID, CategoryId, ProductName, Price FROM PRODUCTS'
     connection.query(sql, (err, result) => {
         if(err){
             return res.status(400).json({
@@ -32,11 +32,11 @@ app.get('/api/products', (req, res) => {
 })
 //Thêm 1 cái SP mới
 app.post('/api/products', (req, res) => {
-    const {ProductID, CategoryID, ProductName, Price} = req.body
-    if(!ProductID || !CategoryID || !ProductName || !Price) return res.status(400).json({
-        message: 'ProductID, CategoryID, ProductName, Price Are Required '
+    const {ProductId, CategoryId, ProductName, Price} = req.body
+    if(!ProductId || !CategoryId || !ProductName || !Price) return res.status(400).json({
+        message: 'ProductId, CategoryId, ProductName, Price Are Required '
     })
-    const sql = `INSERT INTO PRODUCTS(ProductID, CategoryID, ProductName, Price) VALUES ('${ProductID}', '${CategoryID}', '${ProductName}', ${Price} )`
+    const sql = `INSERT INTO PRODUCTS(ProductId, CategoryId, ProductName, Price) VALUES ('${ProductId}', '${CategoryId}', '${ProductName}', ${Price} )`
     //tương tự action bôi đen xong chạy trong dbear
     connection.query(sql, (err, result) => {
         if(err){
@@ -53,10 +53,10 @@ app.post('/api/products', (req, res) => {
 })
 //Sửa SP 
 app.put('/api/products/:id', (req, res) => {
-    const ProductID = req.params.id
+    const ProductId = req.params.id
     // thường liên quan đến id là sài params
-    const {CategoryID, ProductName, Price} = req.body
-    const sql = `UPDATE PRODUCTS SET CategoryID = '${CategoryID}', ProductName = '${ProductName}', Price = ${Price} WHERE ProductID = '${ProductID}'`
+    const {CategoryId, ProductName, Price} = req.body
+    const sql = `UPDATE PRODUCTS SET CategoryId = '${CategoryId}', ProductName = '${ProductName}', Price = ${Price} WHERE ProductID = '${ProductID}'`
     connection.query(sql, (err, result) => {
         if(err){
             return res.status(400).json({
@@ -73,12 +73,12 @@ app.put('/api/products/:id', (req, res) => {
 })
 //xoá 1 SP
 app.delete('/api/products/:id', (req, res) => {
-    const ProductID = req.params.id
+    const ProductId = req.params.id
     // Kiểm tra đầu vào 
     // if(!ProductID) return res.json({
     //     message: 'ProductID Is Required'
     // })
-    const sql = `DELETE FROM PRODUCTS WHERE ProductID = '${ProductID}'`
+    const sql = `DELETE FROM PRODUCTS WHERE ProductId = '${ProductId}'`
     connection.query(sql, (err, result) => {
         if(err){
             return res.status(400).json({
