@@ -1,0 +1,13 @@
+Callback 
+Mã có thể khó hiểu nếu có nhiều hàm callback lồng nhau, gây ra "callback hell".
+Quản lý lỗi thông qua callback, nhưng có thể dễ bị bỏ qua nếu không kiểm tra đúng cách.
+
+
+
+Async/Await
+Mã dễ đọc hơn vì các câu lệnh đồng bộ hơn, như trong các ngôn ngữ lập trình đồng bộ khác
+Dễ quản lý lỗi hơn với try/catch, có thể xử lý lỗi một cách rõ ràng và dễ dàng.
+
+
+
+Callback hell là một hiện tượng khi một Callback được gọi bên trong một Callback khác. Đây là sự lồng nhau của nhiều Callback trong cùng một hàm. Nếu bạn nhìn vào thiết kế của mã nguồn, nó trông giống như một kim tự tháp. Do đó, Callback hell còn được gọi là "Pyramid of Doom" (Kim tự tháp của sự diệt vong).
