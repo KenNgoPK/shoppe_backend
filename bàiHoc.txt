@@ -11,3 +11,17 @@ Dễ quản lý lỗi hơn với try/catch, có thể xử lý lỗi một cách
 
 
 Callback hell là một hiện tượng khi một Callback được gọi bên trong một Callback khác. Đây là sự lồng nhau của nhiều Callback trong cùng một hàm. Nếu bạn nhìn vào thiết kế của mã nguồn, nó trông giống như một kim tự tháp. Do đó, Callback hell còn được gọi là "Pyramid of Doom" (Kim tự tháp của sự diệt vong).
+
+
+Cơ bản về tham số: Nói chung, một tham số là một vị trí tạm thời (placeholder) để chứa giá trị của một biến với một kiểu dữ liệu nhất định khi thực thi một truy vấn tổng quát, hoặc các đối số và giá trị trả về khi thực thi một thủ tục lưu trữ (stored procedure). Tham số được đại diện bởi lớp MySqlParameter trong MySQL.
+
+Lớp MySqlParameter giúp bạn truyền tham số vào các truy vấn SQL một cách an toàn và hiệu quả, đặc biệt là khi bạn muốn tránh các vấn đề như SQL injection.
+
+
+Bảo mật (Tránh SQL Injection):
+SQL injection là một kỹ thuật tấn công mà kẻ tấn công có thể tiêm mã SQL độc hại vào các truy vấn của bạn. Sử dụng tham số giúp ngăn chặn SQL injection, vì giá trị của tham số được truyền vào sẽ được MySQL xử lý an toàn, thay vì phải chèn trực tiếp vào câu truy vấn.
+Khi bạn sử dụng tham số, MySQL sẽ tự động bảo vệ các giá trị khỏi các tấn công này.
+
+
+
+
